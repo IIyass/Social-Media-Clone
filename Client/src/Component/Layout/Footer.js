@@ -1,9 +1,8 @@
 
 import React from 'react';
 
-class Footer extends React.Component {
+const Footer =() =>{
 
-    render(){
         return(
            <div class="ui inverted black vertical footer segment">
                        <div class="ui center aligned container">
@@ -14,9 +13,9 @@ class Footer extends React.Component {
                       </div>
            </div>
         );
-    }
+    
 
 }
 
-export default Footer
+export default Footer;
 

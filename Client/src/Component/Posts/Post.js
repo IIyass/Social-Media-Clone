@@ -93,7 +93,7 @@ render(){
 
 return(
  
-    <div  className="ui container" style={{backgroundColor:"#F5DEB3",marginBottom:"20px",width:"70%",borderRadius:"5px"}}>
+    <div  className="ui container status" >
     <div className="ui comments">
     <div className="comment">
       <a className="avatar">

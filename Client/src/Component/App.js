@@ -17,6 +17,7 @@ const App = ()=>{
       
   <div className="app">
     <Router history={history}>
+      
    <div className="ui container" >
            <Header/>
            <Search/>
