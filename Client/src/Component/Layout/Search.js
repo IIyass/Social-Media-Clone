@@ -1,47 +1,42 @@
-import React from 'react';
+import React,{useState}from 'react';
 import {connect} from "react-redux";
 import {SearchUser} from "../Action"
 
 
 
 
-class Search extends React.Component{
+const Search=(props)=>{
 
-    constructor(props){
-        super(props);
-        this.state={term:''}
-     
+const [term,Setterm]=useState('');
+
+let Onsubmit =(e)=>{
+
+    e.preventDefault();
+    props.SearchUser(term, props.history)
+    Setterm('');
     }
 
-Onsubmit =(e)=>{
-
-e.preventDefault();
-this.props.SearchUser(this.state.term, this.props.history)
-this.setState({term:""})
-}
-
-
-render(){
 
 return(
+    
 
 
-    <div className="ui container" style={{width:"50%",paddingTop:"10px"}}>
+    
          <div className="ui  loading search">
-              <form onSubmit={this.Onsubmit} >
+              <form onSubmit={Onsubmit} >
                    <div  className="ui fluid icon input">                     
                          <input 
-                         onChange= {e=>this.setState({term:e.target.value})} 
-                         value={this.state.term} 
+                         onChange= {e=>Setterm(e.target.value)} 
+                         value={term} 
                          className="prompt"
                           type="text" 
                           placeholder="Search..."/>
                    </div>
               </form>
          </div>
-    </div>
+    
 );
-}}
+}
 
 
 export default connect(

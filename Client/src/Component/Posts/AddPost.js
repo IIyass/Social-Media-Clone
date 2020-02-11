@@ -40,6 +40,7 @@ handleChange=(e)=>{
                      <label className="label1">
                            Add a Statut
                      </label>
+                   
                      <textarea placeholder="What's New" rows="2" 
                            value={this.state.text} 
                            onChange= {this.handleChange}  >
@@ -47,6 +48,7 @@ handleChange=(e)=>{
                      <button  className="ui primary button" type="submit" >
                             Share
                      </button>
+              
 
                        </div>
                 </form >

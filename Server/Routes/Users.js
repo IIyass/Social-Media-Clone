@@ -14,7 +14,7 @@ router.route('/Register')
                 Email:req.body.Email,
                 firstname:req.body.firstname,
                 lastname:req.body.lastname,
-              
+        
                 Password:hash
             })
             newUser.save()

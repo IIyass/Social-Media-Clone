@@ -47,10 +47,13 @@ onsubmit=(formValues)=>{
 
 render(){
 return(
+
+  
     <form
       className="ui form error" 
       onSubmit={this.props.handleSubmit(this.onsubmit)}
        >
+  <div className="Login-Register-Form">
     <Field 
      validate={email()} 
      type="email"  
@@ -67,8 +70,9 @@ return(
          label="Entre Your Password" />
    
     <button className="ui button" >Submit</button>
-   
+  </div>
     </form>
+
 );
 }};
 

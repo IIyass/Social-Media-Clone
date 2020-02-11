@@ -79,16 +79,18 @@ handleupload =()=>{
           if (this.props.Auth) {
 
               if (this.props.user.following.indexOf(this.props.match.params.UserId) === -1) {
-                 FollowBtn=(  
+                 FollowBtn=( 
+                     <div className="Followers" >
                         <button onClick={this.HandleFollowers} class="ui right floated button">
                           <i class="user icon"></i>
                                                Follow
                        </button>
+                       </div>
                        );
              }else{
 
                  FollowBtn= (
-                   <div>
+                   <div  className="Followers">
                          <button class="ui disabled button">
                              <i class="user icon"></i>
                                      followed
@@ -120,15 +122,15 @@ handleupload =()=>{
   
       ImageSetting=(
           
-        <div className="ui container" style={{width:"30%",textAlign:"center"}}>
+        <div className="ui container" >
              <input
-              style={{width:"400px"}}
+            
                className="ui inverted red basic button"
                 type="file" 
                  onChange={this.handleChange} />
   
              <button 
-             style={{width:"50"  ,marginBottom:"5px",textAlign:"center",marginTop:"5px",marginLeft:"60px"}}
+           
               className="ui inverted secondary button" 
                onClick={this.handleupload}>
                    upload
@@ -143,22 +145,19 @@ handleupload =()=>{
 
           if (this.props.profil && items ) {
                   profilInfo= (
-                    <div className="ui container" style={{width:"30%",textAlign:"center"}}>
-    
-                           <h1  style={{textAlign:"center"}}> 
-                            {this.props.profil.firstname} 
-                            {this.props.profil.lastname} 
-                            </h1>
-
-                           <div  style={{textAlign:"center"}}>
+                    <div className="ui container">
+                           <div className="Info">
+                               <h1> 
+                                    {this.props.profil.firstname} 
+                                    {this.props.profil.lastname} 
+                               </h1>
                                 {FollowBtn}
 
-                                    <div class="blue ui buttons"
-                                        style={{width:"400px"  ,paddingBottom:"20px",textAlign:"center",paddingTop:"20px"}}>
+                                   <div class="blue ui buttons"            >
                                            <button class="ui button"> {items.length} Posts</button>
                                            <button class="ui button"> {this.props.profil.followers.length} followers</button>
                                            <button class="ui button"> {this.props.profil.following.length} following</button> 
-                                    </div>
+                                  </div>
                            </div>
                        <div>
                                <br/>
@@ -169,7 +168,7 @@ handleupload =()=>{
 }
 
 return(
-    <div>     
+    <div className="ui container">     
                 {profilInfo}
                 {ImageSetting}
                 {items}     

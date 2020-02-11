@@ -15,6 +15,10 @@ return <PostList/>
 }
 }
 
+
+
+
+
 const mapStateToProps=(state)=>{
     return { IsAuthenticate:state.Auth.IsAuthenticate }
     }
